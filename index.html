@@ -1,0 +1,496 @@
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexCorp | Strategic Corporate Solutions</title>
+    <meta name="description" content="NexCorp delivers executive-level strategic consulting and operational excellence for forward-thinking enterprises.">
+    
+    <!-- Google Fonts: Inter for a clean, modern corporate look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue accent
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e', // Deep Navy primary
+                        },
+                        accent: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(12, 74, 110, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">N</div>
+                    <span class="font-bold text-2xl tracking-tight text-brand-900">NexCorp</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">About</a>
+                    <a href="#expertise" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Expertise</a>
+                    <a href="#case-studies" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Case Studies</a>
+                    <a href="#insights" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Insights</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <a href="#contact" class="bg-brand-900 hover:bg-brand-800 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-brand-900/20">
+                        Partner With Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Home</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">About</a>
+                <a href="#expertise" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Expertise</a>
+                <a href="#case-studies" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Case Studies</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center rounded-md text-base font-bold bg-brand-900 text-white">Partner With Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://www.zs.com/capabilities/supply-chain-and-manufacturing/media_1ec44394024da9d03f234b1aed60cfc7f3017a9fd.jpg?width=1920&format=jpg&optimize=medium?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Modern corporate office architecture" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="md:w-2/3 lg:w-1/2">
+                <div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-brand-500 uppercase bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                    Strategic Excellence
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Navigating Complexity with <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-white">Precision.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl">
+                    We empower global enterprises to optimize operations, drive sustainable growth, and future-proof their business models through data-driven strategy.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-semibold text-center transition-all shadow-lg shadow-brand-500/30">
+                        Schedule Consultation
+                    </a>
+                    <a href="#case-studies" class="bg-transparent border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full font-semibold text-center transition-all backdrop-blur-sm">
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Social Proof -->
+    <div class="bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-200">
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-brand-900">15+</div>
+                    <div class="text-sm text-slate-500 mt-1 font-medium uppercase tracking-wide">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-brand-900">$2B+</div>
+                    <div class="text-sm text-slate-500 mt-1 font-medium uppercase tracking-wide">Client Value Created</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-brand-900">500+</div>
+                    <div class="text-sm text-slate-500 mt-1 font-medium uppercase tracking-wide">Projects Delivered</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-brand-900">Global</div>
+                    <div class="text-sm text-slate-500 mt-1 font-medium uppercase tracking-wide">Market Reach</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-full -z-10"></div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNqrM8pna-p4PRqIWA8k6NQyF8Pvi42vow0g&s?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" alt="Executive team meeting discussing strategy" class="rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-xl max-w-xs hidden md:block">
+                        <p class="text-brand-900 font-bold text-lg">"Strategy without execution is hallucination."</p>
+                        <p class="text-slate-500 text-sm mt-2">— The NexCorp Philosophy</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Who We Are</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Bridging the Gap Between Vision and Reality.</h3>
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                        In an era of rapid disruption, traditional consulting models often fall short. NexCorp integrates deep industry expertise with agile methodologies to deliver actionable results.
+                    </p>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        We don't just advise; we partner. From restructuring operations to digital transformation, our team aligns with your executive goals to ensure sustainable, long-term ROI.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-500 mr-3"></i> Data-Driven Decision Making
+                        </li>
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-500 mr-3"></i> Agile Implementation Frameworks
+                        </li>
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-500 mr-3"></i> Cross-Functional Expertise
+                        </li>
+                    </ul>
+
+                    <a href="#expertise" class="text-brand-600 font-semibold hover:text-brand-800 inline-flex items-center group">
+                        Explore Our Expertise <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Expertise Section -->
+    <section id="expertise" class="py-20 md:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Our Expertise</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Comprehensive Solutions for Modern Challenges</h3>
+                <p class="text-slate-600 text-lg">We provide targeted interventions across critical business functions.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        <i class="fas fa-chart-line text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Strategic Planning</h4>
+                    <p class="text-slate-600 mb-4">Defining clear, actionable roadmaps that align organizational structure with long-term market objectives.</p>
+                    <a href="#" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Learn More &rarr;</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        <i class="fas fa-cogs text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Operational Efficiency</h4>
+                    <p class="text-slate-600 mb-4">Streamlining workflows and reducing overhead through lean methodologies and process automation.</p>
+                    <a href="#" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Learn More &rarr;</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        <i class="fas fa-laptop-code text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Digital Transformation</h4>
+                    <p class="text-slate-600 mb-4">Modernizing legacy systems and integrating cloud-native solutions to enhance scalability.</p>
+                    <a href="#" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Learn More &rarr;</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        <i class="fas fa-users text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Change Management</h4>
+                    <p class="text-slate-600 mb-4">Guiding leadership and teams through complex transitions to ensure adoption and morale.</p>
+                    <a href="#" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Learn More &rarr;</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        <i class="fas fa-shield-alt text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Risk & Compliance</h4>
+                    <p class="text-slate-600 mb-4">Proactive risk assessment frameworks ensuring regulatory adherence and business continuity.</p>
+                    <a href="#" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Learn More &rarr;</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        <i class="fas fa-globe text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Market Expansion</h4>
+                    <p class="text-slate-600 mb-4">Identifying and capitalizing on new geographic and demographic opportunities.</p>
+                    <a href="#" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Case Study -->
+    <section id="case-studies" class="py-20 md:py-28 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Data analytics dashboard" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg text-xs font-bold text-brand-900 uppercase tracking-wider">
+                            FinTech Sector
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Case Study</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Optimizing Global Supply Chain Logistics</h3>
+                    <p class="text-slate-600 text-lg mb-6">
+                        <strong class="text-slate-900">The Challenge:</strong> A Fortune 500 logistics provider faced a 15% increase in operational costs due to fragmented legacy systems and inefficient routing.
+                    </p>
+                    <p class="text-slate-600 text-lg mb-6">
+                        <strong class="text-slate-900">The Approach:</strong> NexCorp implemented a proprietary AI-driven routing algorithm and restructured the central command hierarchy to enable real-time decision making.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="border-l-4 border-brand-500 pl-4">
+                            <div class="text-2xl font-bold text-brand-900">-22%</div>
+                            <div class="text-sm text-slate-500">Operational Costs</div>
+                        </div>
+                        <div class="border-l-4 border-brand-500 pl-4">
+                            <div class="text-2xl font-bold text-brand-900">+35%</div>
+                            <div class="text-sm text-slate-500">Delivery Speed</div>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-slate-900 text-white px-8 py-3 rounded-full font-medium hover:bg-slate-800 transition-colors">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Trust -->
+    <section class="py-20 bg-brand-900 text-white relative overflow-hidden">
+        <!-- Decorative circles -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-white/5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-500/10 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <i class="fas fa-quote-left text-4xl text-brand-500/50 mb-8"></i>
+            <h3 class="text-2xl md:text-3xl font-light leading-relaxed max-w-4xl mx-auto mb-10">
+                "NexCorp transformed our operational model. Their strategic clarity and execution speed were unlike any partner we've worked with previously. They don't just talk strategy; they deliver results."
+            </h3>
+            <div class="flex items-center justify-center gap-4">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO Portrait" class="w-12 h-12 rounded-full border-2 border-brand-500">
+                <div class="text-left">
+                    <div class="font-bold text-white">James Sterling</div>
+                    <div class="text-brand-200 text-sm">CEO, Sterling Global</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 md:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Ready to Elevate Your Strategy?</h2>
+            <p class="text-slate-600 text-lg mb-10">
+                Schedule a preliminary consultation with our senior partners. We'll discuss your current challenges and identify immediate opportunities for growth.
+            </p>
+            
+            <div class="bg-slate-50 rounded-2xl p-8 md:p-12 shadow-lg border border-slate-100">
+                <form class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="col-span-1">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="John Doe">
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Work Email</label>
+                        <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="john@company.com">
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Company</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="Company Name">
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Topic</label>
+                        <select class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all bg-white">
+                            <option>Strategic Planning</option>
+                            <option>Operational Efficiency</option>
+                            <option>Digital Transformation</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-span-1 md:col-span-2">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="Briefly describe your objectives..."></textarea>
+                    </div>
+                    <div class="col-span-1 md:col-span-2">
+                        <button type="button" class="w-full bg-brand-900 hover:bg-brand-800 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                            Request Consultation
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-brand-900 font-bold text-xl">N</div>
+                        <span class="font-bold text-2xl tracking-tight text-white">NexCorp</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Delivering strategic clarity and operational excellence for the world's leading enterprises.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Leadership</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Press & Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Strategy Consulting</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Digital Transformation</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Risk Management</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-500"></i>
+                            <span>100 Financial District Blvd,<br>New York, NY 10005</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-500"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-500"></i>
+                            <span>contact@nexcorp.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <div class="mb-4 md:mb-0">
+                    &copy; 2026 NexCorp Solutions. All rights reserved developed by Zannatul.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Smooth Scroll for Anchor Links (Polyfill for older browsers if needed, though CSS scroll-smooth handles most)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
